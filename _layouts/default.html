@@ -354,7 +354,8 @@
   <nav>
     <a href="{{ site.baseurl }}/" class="nav-brand">Quantum Resonance</a>
     <ul class="nav-links">
-      <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Cards</a></li>
+      <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ site.baseurl }}/cards" {% if page.url contains 'cards' %}class="active"{% endif %}>Cards</a></li>
       <li><a href="{{ site.baseurl }}/rules" {% if page.url contains 'rules' %}class="active"{% endif %}>Rules</a></li>
       <li><a href="{{ site.baseurl }}/factions" {% if page.url contains 'factions' %}class="active"{% endif %}>Factions</a></li>
     </ul>
