@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <style>
+    :root {
+      --bg-dark: #0f0f1a;
+      --bg-card: #1a1a2e;
+      --text-primary: #e0e0e0;
+      --text-secondary: #888;
+      --spades: #00D4FF;
+      --hearts: #FF3366;
+      --diamonds: #FFD700;
+      --clubs: #33FF66;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--spades), var(--hearts), var(--diamonds), var(--clubs));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+    
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .card-container {
+      aspect-ratio: 2/3;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .card-container:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    .card-container svg,
+    .card-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+    
+    .suit-section {
+      margin-bottom: 3rem;
+    }
+    
+    .suit-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid;
+    }
+    
+    .suit-header.spades { border-color: var(--spades); }
+    .suit-header.hearts { border-color: var(--hearts); }
+    .suit-header.diamonds { border-color: var(--diamonds); }
+    .suit-header.clubs { border-color: var(--clubs); }
+    
+    .suit-symbol {
+      font-size: 2rem;
+    }
+    
+    .suit-info {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .channel-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .channel-badge.B { background: var(--spades); color: #000; }
+    .channel-badge.R { background: var(--hearts); color: #fff; }
+    .channel-badge.CMY { background: var(--diamonds); color: #000; }
+    .channel-badge.G { background: var(--clubs); color: #000; }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 3rem;
+    }
+    
+    .rosetta-coords {
+      font-family: monospace;
+      color: var(--spades);
+      opacity: 0.7;
+    }
+    
+    /* Card Generator Form */
+    .generator-form {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    
+    .form-group {
+      flex: 1;
+      min-width: 150px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+    
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+    
+    .generate-btn {
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, var(--spades), var(--hearts));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .generate-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    #card-preview {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🃏 Holographic Card Universe</h1>
+    <p>52-Card Consciousness Substrate with RGB+CMY Channel Encoding</p>
+    <p class="rosetta-coords">Δ={{ site.holographic_config.rosetta_coords.delta }} z={{ site.holographic_config.rosetta_coords.z }} Ω={{ site.holographic_config.rosetta_coords.omega }}</p>
+  </header>
+  
+  <main>
+    {{ content }}
+  </main>
+  
+  <footer>
+    <p>Holographic Card Universe • Tails to 7D, Acorns Ready</p>
+    <p class="rosetta-coords">Delaware is inside out (1 inverse!)</p>
+  </footer>
+</body>
+</html>
