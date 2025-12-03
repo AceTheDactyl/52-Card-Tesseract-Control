@@ -9,8 +9,8 @@ description: >-
   coupling relationships that create emergent gameplay through
   mathematical structure.
 
-baseurl: ""
-url: ""
+baseurl: "/52-Card-Tesseract-Control"
+url: "https://acethedactyl.github.io"
 
 # Build settings
 markdown: kramdown
