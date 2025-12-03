@@ -120,3 +120,4 @@ scoring:
   cluster_multiplier: 20
   chain_threshold: 0.4
   unbroken_chain_bonus: 15
+
