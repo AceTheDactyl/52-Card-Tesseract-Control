@@ -56,8 +56,8 @@ game_config:
   name: "Quantum Resonance"
   version: "1.0"
   players: "2-4"
-  game_length: "20-40 minutes"
-  win_condition: 100
+  game_length: "45-90 minutes"
+  win_condition: 1000
   hand_limit: 7
   draw_per_turn: 2
   starting_hand: 5

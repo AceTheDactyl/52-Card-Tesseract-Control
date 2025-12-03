@@ -531,7 +531,7 @@ const defaultDecks = {
       // Support - All high cards (10)
       "KH", "KS", "KC", "QH", "QS", "JH", "JS", "JC", "AH", "AS"
     ],
-    strategy: "Go all-in with big plays. Trigger Brilliance passive with 3+ card formations. Race to 100.",
+    strategy: "Go all-in with big plays. Trigger Brilliance passive with 3+ card formations. Race to 1,000.",
     firstTurnPlay: ["KD", "KH", "KS"]
   },
   clubs: {
@@ -709,7 +709,7 @@ function simulateTurn(faction) {
 
     <div class="sim-phase">
       <h4><span class="phase-num">4</span> End of Turn</h4>
-      <p>Cards in hand: ${5 - playedCards.length} | Cards played: ${playedCards.length} | Score: <strong style="color: var(--accent)">${totalScore}</strong> / 100</p>
+      <p>Cards in hand: ${5 - playedCards.length} | Cards played: ${playedCards.length} | Score: <strong style="color: var(--accent)">${totalScore}</strong> / 1,000</p>
       <p style="color: var(--text-secondary); font-size: 0.9rem;">Played cards go to discard. Draw 2 cards next turn.</p>
     </div>
 

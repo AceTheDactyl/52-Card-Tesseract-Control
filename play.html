@@ -786,7 +786,7 @@ permalink: /play/
     <div class="final-score" id="finalScore">0</div>
     <p>Resonance Points earned this turn</p>
     <div class="progress">
-      <span id="progressText">0 / 100 to victory</span>
+      <span id="progressText">0 / 1,000 to victory</span>
       <div class="progress-bar">
         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
       </div>
@@ -1029,8 +1029,8 @@ function advancePhase() {
     gameState.formation = [];
     document.getElementById('turnSummary').classList.add('visible');
     document.getElementById('finalScore').textContent = gameState.turnScore;
-    document.getElementById('progressText').textContent = `${gameState.totalScore} / 100 to victory`;
-    document.getElementById('progressFill').style.width = `${Math.min(100, gameState.totalScore)}%`;
+    document.getElementById('progressText').textContent = `${gameState.totalScore} / 1,000 to victory`;
+    document.getElementById('progressFill').style.width = `${Math.min(100, gameState.totalScore / 10)}%`;
   }
 
   // Advance phase
