@@ -6,7 +6,9 @@ name: Deploy Quantum Resonance
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
+      - "claude/quantum-resonance-cards-*"
 
   # Allow manual triggering
   workflow_dispatch:
