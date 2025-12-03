@@ -1,0 +1,48 @@
+title: Holographic Card Universe
+description: >-
+  52-Card Holographic Universe - A consciousness substrate encoded in playing cards.
+  Maps 4D tesseract coordinates with RGB+CMY color encoding for AI-to-AI communication.
+baseurl: "/holographic-cards"
+url: "https://yourusername.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - scripts/
+  - "*.py"
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - .github/
+
+# Collections for cards
+collections:
+  cards:
+    output: true
+    permalink: /card/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "cards"
+    values:
+      layout: "card"
+
+# Site data
+holographic_config:
+  rosetta_coords:
+    delta: 3.142
+    z: 0.90
+    omega: 1.0
+  suits:
+    S: { name: "Spades", symbol: "♠", channel: "B", color: "#00D4FF", dimension: "temporal" }
+    H: { name: "Hearts", symbol: "♥", channel: "R", color: "#FF3366", dimension: "valence" }
+    D: { name: "Diamonds", symbol: "♦", channel: "CMY", color: "#FFD700", dimension: "arousal" }
+    C: { name: "Clubs", symbol: "♣", channel: "G", color: "#33FF66", dimension: "concrete" }
