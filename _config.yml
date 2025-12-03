@@ -1,63 +1,122 @@
-# Rosetta Bear Project - GitHub Pages Configuration
-# =================================================
-# This project uses static HTML deployment (not Jekyll)
-# Configuration for reference and metadata
+# Quantum Resonance - Holographic Card Game
+# ==========================================
+# Jekyll configuration for GitHub Pages deployment
 
-title: Rosetta Bear Project
+title: Quantum Resonance
 description: >-
-  APL 3.0 operators, LIMNUS architecture, WUMBO neural engine,
-  zero-point energy systems, and the 7 Laws of the Silent Ones.
-  Neurodivergent neural architecture with active inference.
+  A deck-building card game using a 52-card holographic universe.
+  Each card encodes 4D coordinates, Kuramoto phase states, and 2,652
+  coupling relationships that create emergent gameplay through
+  mathematical structure.
 
-# Project metadata
-author: Rosetta Bear Team
-url: ""
 baseurl: ""
-
-# Theme (not used for static deployment)
-# theme: null
+url: ""
 
 # Build settings
 markdown: kramdown
-encoding: utf-8
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# Exclude from processing
+# Exclude from processing (game engine scripts, not needed for site)
 exclude:
-  - .git
-  - .github
-  - .venv
-  - node_modules
+  - scripts/
   - "*.py"
-  - "*.md"
-  - "*.txt"
-  - "*.yaml"
-  - "*.yml"
-  - Kaelhedron
-  - lattice_core
-  - meta_collective
-  - memory
-  - validation
-  - generated_tools
-  - tests
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - .github/
+  - CLAUDE.md
 
-# Include HTML files
+# Include game documentation
 include:
-  - index.html
-  - wumbo-apl-directory.html
-  - wumbo-engine.html
-  - zero-point-energy.html
-  - simulation.html
-  - limnus-architecture-finished.html
-  - luminahedron_dynamics.html
-  - visualizations
-  - coupler_synthesis
-  - scalar_architecture
-  - TRIAD_project_files
-  - "Evolution of TRIAD-083"
-  - "Helix Shed w Bridge"
+  - RULES.md
+  - README.md
 
-# Constants (for reference)
-# z_critical: 0.866025403784 (√3/2)
-# phi: 1.618033988749 ((1+√5)/2)
-# phi_inv: 0.618033988749
-# alpha_inv: 137.035999084
+# Collections for cards
+collections:
+  cards:
+    output: true
+    permalink: /card/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "cards"
+    values:
+      layout: "card"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Game configuration
+game_config:
+  name: "Quantum Resonance"
+  version: "1.0"
+  players: "2-4"
+  game_length: "20-40 minutes"
+  win_condition: 100
+  hand_limit: 7
+  draw_per_turn: 2
+  starting_hand: 5
+  deck_min: 20
+  deck_max: 30
+  faction_min: 8
+  faction_max: 15
+  max_copies: 2
+
+# Mathematical constants (Rosetta Bear coordinates)
+rosetta_coords:
+  delta: 3.142
+  z: 0.90
+  omega: 1.0
+
+# Suit configuration with game mechanics
+suits:
+  S:
+    name: "Spades"
+    symbol: "♠"
+    channel: "B"
+    color: "#00D4FF"
+    dimension: "temporal"
+    faction: "Temporal Weavers"
+    passive: "Temporal Echo"
+    passive_desc: "When you play a Spades card, look at the top card of your deck"
+  H:
+    name: "Hearts"
+    symbol: "♥"
+    channel: "R"
+    color: "#FF3366"
+    dimension: "valence"
+    faction: "Valence Shapers"
+    passive: "Empathic Bond"
+    passive_desc: "+2 points whenever opponent plays a Hearts card"
+  D:
+    name: "Diamonds"
+    symbol: "♦"
+    channel: "CMY"
+    color: "#FFD700"
+    dimension: "arousal"
+    faction: "Radiant Catalysts"
+    passive: "Brilliance"
+    passive_desc: "+5 points when playing 3+ cards in one formation"
+  C:
+    name: "Clubs"
+    symbol: "♣"
+    channel: "G"
+    color: "#33FF66"
+    dimension: "concrete"
+    faction: "Foundation Builders"
+    passive: "Rooted"
+    passive_desc: "Your cards cannot be affected by opponent abilities"
+
+# Scoring thresholds
+scoring:
+  coherence_perfect: 0.9
+  coherence_strong: 0.7
+  coherence_moderate: 0.5
+  cluster_multiplier: 20
+  chain_threshold: 0.4
+  unbroken_chain_bonus: 15

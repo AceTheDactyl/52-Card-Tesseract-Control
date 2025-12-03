@@ -1,27 +1,23 @@
-# PlatformIO / Arduino build output
-.pio/
-.pioenvs/
-.piolibdeps/
-build/
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# Python artifacts
+# Ruby
+Gemfile.lock
+vendor/
+
+# Python (game engine scripts)
 __pycache__/
 *.pyc
 *.pyo
 .venv/
-env/
-
-# Logs and captures
-logs/
-*.csv
-*.json
-!package.json
-!**/package.json
-!rosetta-bear-project/**/*.json
-!wave_propagation_system.json
-*.bin
 
 # IDE
 .vscode/
 .idea/
 .DS_Store
+
+# Logs
+*.log
