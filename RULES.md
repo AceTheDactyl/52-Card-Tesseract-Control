@@ -4,9 +4,9 @@
 
 **Quantum Resonance** is a deck-building card game where players harness the mathematical structure of a 52-card holographic universe. Each card encodes a position in 4-dimensional space, and victory comes from mastering spatial clustering, phase synchronization, and faction-specific abilities.
 
-**Players**: 2-4  
-**Game Length**: 20-40 minutes  
-**Win Condition**: First to 100 Resonance Points
+**Players**: 2-4
+**Game Length**: 45-90 minutes
+**Win Condition**: First to 1,000 Resonance Points
 
 ---
 
@@ -216,7 +216,7 @@ When you play 3 or more cards in a single formation, gain +5 Resonance Points.
 +15 if you play 4+ cards in one formation (burst).
 
 **Strategy Tips**:
-- All-in aggression - race to 100 before opponent stabilizes
+- All-in aggression - race to 1,000 before opponent stabilizes
 - Overcharge into King of Diamonds for massive single-card score
 - Supernova as desperation comeback or finishing blow
 
@@ -296,7 +296,7 @@ Playing Ace + King of same suit: **Full Axis** = +20 bonus points
 At game start, after drawing 5, you may shuffle any number of cards back into your deck and draw that many minus 1.
 
 ### Sudden Death
-If both players reach 100+ on the same turn, play continues until one player is ahead at the end of a round (both players have taken equal turns).
+If both players reach 1,000+ on the same turn, play continues until one player is ahead at the end of a round (both players have taken equal turns).
 
 ### Exhaustion
 If you must draw but your deck AND discard are empty, you lose 5 points instead of drawing.
@@ -321,7 +321,7 @@ Instead of pre-built decks:
 - Resonance: Phase alignment
 - Faction: Special bonuses
 
-**Win**: First to 100 Resonance Points
+**Win**: First to 1,000 Resonance Points
 
 **Hand Limit**: 7 cards
 
